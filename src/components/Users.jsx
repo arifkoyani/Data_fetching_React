@@ -26,8 +26,6 @@ let Users = () => {
   }, [page]);
 
 
-
-
   useEffect(() => {
     window.addEventListener("scroll", () => {
       const { scrollTop, clientHeight, scrollHeight } =
