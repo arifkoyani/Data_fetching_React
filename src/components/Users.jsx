@@ -5,18 +5,18 @@ let Users = () => {
   let [page, setPage] = useState(1);
   let perPage=10;
 
+
   useEffect(() => {
     const fetchData = async () => {
       
       try {
-        const response = await fetch(
-          `https://api.github.com/search/users?q=followers:>0&sort=followers&order=desc&page=${page}&per_page=${perPage}`
-        );
+        const response = await fetch(`https://api.github.com/search/users?q=followers:>0&sort=followers&order=desc&page=${page}&per_page=${perPage}`);
         const jsonData = await response.json();
         console.log(jsonData)
         setData((prevData) => [...prevData, ...jsonData.items]);
       } catch (error) {
         console.error("Error fetching data:", error);
+
       }
     };
 
@@ -24,6 +24,9 @@ let Users = () => {
 
 
   }, [page]);
+
+
+
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -39,7 +42,9 @@ let Users = () => {
 
   return (
     <>   
-     <div className="main">  
+
+        <div className="main">  
+
       {data &&
         data.map((e, i) => (
 
@@ -50,12 +55,10 @@ let Users = () => {
             <br />
             <span>ID is: {`${e.id}` }</span>
             <br />
-            <span>
-            Admin site: <span>Site admin is: {`${e.site_admin}`}</span>
-            </span>
+           
             <br />
             <div>
-            <span>avatar is: <img src={`${e.avatar_url}`} /></span>
+            <span><img src={`${e.avatar_url}`} /></span>
             </div>
             <span>
               <br/>
@@ -72,7 +75,8 @@ let Users = () => {
 
           </div>
         ))}
-    </div>
+         </div>
+
     </>
 
   );
