@@ -7,11 +7,15 @@
     padding:10px;
     display: flex;
     flex-wrap: wrap;
-    background-color:#114d5d;
+    background-color:white;
     font-family: Arial;
     justify-content: center;
     font-weight: bold;
     gap:15px;
+    animation-name:bg-colors;
+    animation-duration: 1s;
+    animation-timing-function: linear;  
+    animation-iteration-count: infinite;
 
 }
 
@@ -65,4 +69,18 @@ nav{
         text-decoration: none;
         font-size: 10px;
     }
+}
+
+@keyframes bg-colors {
+    0%{
+        .main{
+            background-color:#114d5d;
+        }
+    }
+    100%{
+        .main{
+            background-color: black;
+        }
+    }
+    
 }

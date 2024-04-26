@@ -4,7 +4,7 @@ let Students=()=>{
     return(
         <>
         <nav>
-        <h3 className="text-orange">Data Fetching....</h3>
+        <h3 className="text-orange"> GitHub Users Data Fetching On Scroll....</h3>
         </nav>
         </>
     )
